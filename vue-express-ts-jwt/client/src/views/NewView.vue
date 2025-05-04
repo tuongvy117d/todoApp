@@ -1,9 +1,9 @@
 <template>
-<h3>Hello {{ username }}</h3>
+<h3>Hello {{ username }}, you have {{ todos.length }} todos</h3>
 <form>
-  <label><input type="checkbox" name="option1" /> Option 1</label><br>
-  <label><input type="checkbox" name="option2" /> Option 2</label><br>
-  <label><input type="checkbox" name="option3" /> Option 3</label><br>
+  <div v-for="todo in todos" :key="todo.id">
+    <label><input type="checkbox" v-model="todo.completed" /> {{ todo.title }}</label><br>
+  </div>
 </form>
 <h3>That is all, {{ username }}</h3>
 </template>
@@ -15,8 +15,17 @@ export default defineComponent({
   setup() {
     const username = ref('Bate');
     
+    // Sample todo list
+    const todos = ref([
+      { id: 1, title: 'Learn Vue 3', completed: false },
+      { id: 2, title: 'Build a todo app', completed: false },
+      { id: 3, title: 'Master TypeScript', completed: false },
+      { id: 4, title: 'Play game', completed: false }
+    ]);
+    
     return {
-      username
+      username,
+      todos
     };
   }
 });
