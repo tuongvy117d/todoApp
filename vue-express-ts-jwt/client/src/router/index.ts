@@ -17,6 +17,12 @@ const router = createRouter({
       // component: () => import('../views/NewView.vue'),
     },
     {
+      path: '/newpage',
+      name: 'new page',
+      component: () => import('../views/NewView.vue'),
+      meta: { guestOnly: true },
+    },
+    {
       path: '/login',
       name: 'login',
       component: () => import('../views/LoginView.vue'),
