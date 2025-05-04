@@ -5,7 +5,15 @@
     <label><input type="checkbox" v-model="todo.completed" /> {{ todo.title }}</label><br>
   </div>
 </form>
-<h3>That is all, {{ username }}</h3>
+<hr>
+
+<h3>Hello {{ username }}, you have done 4 items</h3>
+
+
+  <div v-for="todo in doneTodos" :key="todo.id">
+    <p> {{ todo.title }}</p>
+  </div>
+
 </template>
 
 <script lang="ts">
@@ -22,10 +30,16 @@ export default defineComponent({
       { id: 3, title: 'Master TypeScript', completed: false },
       { id: 4, title: 'Play game', completed: false }
     ]);
-    
+    const doneTodos = ref([
+      { id: 1, title: 'This is the first todo', completed: false },
+      { id: 2, title: 'This is the second todo', completed: false },
+      { id: 3, title: 'This is the third todo', completed: false },
+      { id: 4, title: 'This is the fourth todo', completed: false }
+    ]);
     return {
       username,
-      todos
+      todos,
+      doneTodos
     };
   }
 });
