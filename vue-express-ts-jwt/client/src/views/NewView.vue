@@ -8,8 +8,10 @@
         <span>
           {{ todo.title }}
         </span>
-        <span v-if="todo.categories.includes('Learning')">(L)</span>
-        <span v-if="todo.categories.includes('Random')">(R)</span>
+        <span v-if="todo.categories.includes('Learning') && todo.categories.includes('Random')">(LR)</span>
+        <span v-else-if="todo.categories.includes('Random')">(R)</span>
+        <span v-else-if="todo.categories.includes('Learning')">(L)</span>
+        <span v-else>(Nothing)</span>
       </label>
       
     </div>
@@ -36,7 +38,9 @@ export default defineComponent({
       { id: 5, title: 'This is the first todo', completed: true, categories: "Random"  },
       { id: 6, title: 'This is the second todo', completed: true, categories: "Random, Learning"  },
       { id: 7, title: 'This is the third todo', completed: true, categories: "Learning"  },
-      { id: 8, title: 'This is the fourth todo', completed: true, categories: "Learning"  }
+      { id: 8, title: 'This is the fourth todo', completed: true, categories: "Learning"  },
+      { id: 9, title: 'This is the fifth todo', completed: true, categories: ""  }
+
     ]);
     return {
       username,
