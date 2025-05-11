@@ -30,18 +30,15 @@ export default defineComponent({
       { id: 1, title: 'Learn Vue 3', completed: false },
       { id: 2, title: 'Build a todo app', completed: false },
       { id: 3, title: 'Master TypeScript', completed: false },
-      { id: 4, title: 'Play game', completed: false }
-    ]);
-    const doneTodos = ref([
-      { id: 1, title: 'This is the first todo', completed: false },
-      { id: 2, title: 'This is the second todo', completed: false },
-      { id: 3, title: 'This is the third todo', completed: false },
-      { id: 4, title: 'This is the fourth todo', completed: false }
+      { id: 4, title: 'Play game', completed: false },
+      { id: 5, title: 'This is the first todo', completed: true },
+      { id: 6, title: 'This is the second todo', completed: true },
+      { id: 7, title: 'This is the third todo', completed: true },
+      { id: 8, title: 'This is the fourth todo', completed: true }
     ]);
     return {
       username,
       todos,
-      doneTodos
     };
   }
 });
@@ -87,7 +84,7 @@ export default defineComponent({
   -webkit-appearance: none;
   width: 20px;
   height: 20px;
-  border: 2px solid #ff4d6d;
+  border: 2px solid #413cda;
   border-radius: 4px;
   margin-right: 10px;
   position: relative;
@@ -135,7 +132,7 @@ export default defineComponent({
   cursor: pointer;
   font-family: 'Comic Sans MS', cursive, sans-serif;
   font-size: 1.1rem;
-  color: #ff4d6d;
+  color: #246cda;
   transition: all 0.3s ease;
 }
 
