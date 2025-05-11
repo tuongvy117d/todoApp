@@ -82,16 +82,66 @@ export default defineComponent({
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
 }
 
+.todo-item input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ff4d6d;
+  border-radius: 4px;
+  margin-right: 10px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.todo-item input[type="checkbox"]:checked {
+  background-color: #ff4d6d;
+  border-color: #ff4d6d;
+}
+
+.todo-item input[type="checkbox"]:checked::after {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  animation: checkmark 0.2s ease-in-out;
+}
+
+.todo-item input[type="checkbox"]:hover {
+  border-color: #ff8fab;
+  box-shadow: 0 0 5px rgba(255, 77, 109, 0.3);
+}
+
+@keyframes checkmark {
+  0% {
+    opacity: 0;
+    transform: rotate(45deg) scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(45deg) scale(1);
+  }
+}
+
 .todo-item label {
   display: flex;
   align-items: center;
   cursor: pointer;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  font-size: 1.1rem;
+  color: #ff4d6d;
+  transition: all 0.3s ease;
 }
 
-.todo-item input[type="checkbox"] {
-  margin-right: 10px;
-  height: 18px;
-  width: 18px;
+.todo-item label:hover {
+  color: #ff8fab;
+  transform: translateX(5px);
 }
 
 .divider {
