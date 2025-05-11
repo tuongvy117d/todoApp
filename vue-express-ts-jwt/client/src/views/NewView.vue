@@ -3,7 +3,7 @@
   <h3 class="greeting">Hello {{ username }}, you have {{ todos.length }} todos</h3>
   <form class="todo-list">
     <div v-for="todo in todos" :key="todo.id" class="todo-item">
-      <label v-if="todo.categories.includes('Learning')">
+      <label>
         <input type="checkbox" v-model="todo.completed" />
         {{ todo.title }}
         <span v-if="todo.categories.includes('Learning')">(L)</span>
