@@ -1,24 +1,8 @@
+<!-- Practice Vue with {{}}. v-for, v-if, v-else-if, and v-else -->
+
 <template>
 <div class="todo-container">
   <h3 class="greeting">Hello {{ username }}, you have {{ todos.length }} todos</h3>
-  <form class="todo-list">
-    <div v-for="todo in todos" :key="todo.id" class="todo-item">
-      <label :style="{ textDecoration: todo.completed ? 'line-through' : 'none' }">
-        <input type="checkbox" v-model="todo.completed" />
-        <span>
-          {{ todo.title }}
-        </span>
-        <span v-if="todo.categories.includes('Learning') && todo.categories.includes('Random')">(LR)</span>
-        <span v-else-if="todo.categories.includes('Random')">(R)</span>
-        <span v-else-if="todo.categories.includes('Learning')">(L)</span>
-        <span v-else>(Nothing)</span>
-      </label>
-      
-    </div>
-  </form>
-  <hr class="divider">
-
-  
 </div>
 </template>
 
