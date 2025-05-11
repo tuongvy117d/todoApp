@@ -8,13 +8,7 @@
   </form>
   <hr class="divider">
 
-  <h3 class="greeting">Hello {{ username }}, you have done {{ doneTodos.length }} items</h3>
-
-  <div class="done-list">
-    <div v-for="todo in doneTodos" :key="todo.id" class="done-item">
-      <p>{{ todo.title }}</p>
-    </div>
-  </div>
+  
 </div>
 </template>
 
@@ -27,14 +21,14 @@ export default defineComponent({
     
     // Sample todo list
     const todos = ref([
-      { id: 1, title: 'Learn Vue 3', completed: false },
-      { id: 2, title: 'Build a todo app', completed: false },
-      { id: 3, title: 'Master TypeScript', completed: false },
-      { id: 4, title: 'Play game', completed: false },
-      { id: 5, title: 'This is the first todo', completed: true },
-      { id: 6, title: 'This is the second todo', completed: true },
-      { id: 7, title: 'This is the third todo', completed: true },
-      { id: 8, title: 'This is the fourth todo', completed: true }
+      { id: 1, title: 'Learn Vue 3', completed: false , categories: "Learning"},
+      { id: 2, title: 'Build a todo app', completed: false, categories: "Learning, Random" },
+      { id: 3, title: 'Master TypeScript', completed: false, categories: "Random"  },
+      { id: 4, title: 'Play game', completed: false, categories: "Learning"  },
+      { id: 5, title: 'This is the first todo', completed: true, categories: "Random"  },
+      { id: 6, title: 'This is the second todo', completed: true, categories: "Random, Learning"  },
+      { id: 7, title: 'This is the third todo', completed: true, categories: "Learning"  },
+      { id: 8, title: 'This is the fourth todo', completed: true, categories: "Learning"  }
     ]);
     return {
       username,
